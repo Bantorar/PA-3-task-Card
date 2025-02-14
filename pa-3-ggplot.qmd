@@ -134,7 +134,15 @@ Building off of the plot you made in Step 6, add an aesthetic to differentiate t
 
 ```{r}
 #| label: scatterplot-with-one-categorical-variable
-
+ggplot(data = penguins, #Using the penguins data set
+       mapping = aes(x = bill_length_mm, #mapping bill length as the x-axis
+                     y = bill_depth_mm,  #mapping bill depth as the y-axis
+                     color = species)) + #mapping color by Species
+  geom_point()+ #creating the chart as a scatterplot
+  labs(x = "Bill Length (mm)", #naming the x-axis
+       y = "Bill Depth (mm)", #naming the y-axis
+       color = "Species") + #naming the Color legend
+  theme_bw() #making theme black and white
 ```
 
 ## Step 8: Adding Another Categorical Variable
@@ -143,7 +151,17 @@ Building off of the plot you made in Step 7, add the location of the penguins ( 
 
 ```{r}
 #| label: scatterplot-with-two-categorical-variables
-
+ggplot(data = penguins, #Using the penguins data set
+       mapping = aes(x = bill_length_mm, #mapping bill length as the x-axis
+                     y = bill_depth_mm,  #mapping bill depth as the y-axis
+                     color = species,  #mapping color by Species
+                     shape = island)) + #mapping shapes by Islands
+  geom_point()+ #creating the chart as a scatterplot
+  labs(x = "Bill Length (mm)", #naming the x-axis
+       y = "Bill Depth (mm)", #naming the y-axis
+       color = "Species", #naming the Color legend
+       shape = "Islands") + #naming the Shape legend
+  theme_bw() #making theme black and white
 ```
 
 # Canvas Quiz
@@ -151,7 +169,7 @@ Building off of the plot you made in Step 7, add the location of the penguins ( 
 Working together as a team, use the plots you both created to address the
 following questions on Canvas:
 
-1.  Which species of penguins is represented the **least** in the `penguins` data set?
+1.  Which species of penguins is represented the **least** in the `penguins` data set? 
 
 2.  Which species of penguins are found on Biscoe Island?
 
