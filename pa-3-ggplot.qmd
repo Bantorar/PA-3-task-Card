@@ -8,7 +8,7 @@ execute:
 ---
 
 ```{r}
-#| label:setup
+#| label: setup
 library(tidyverse)
 install.packages("palmerpenguins")
 library(palmerpenguins)
@@ -105,7 +105,11 @@ Use `ggplot2` to draw a barchart of different `species` included in the dataset.
 
 ```{r}
 #| label: barchart
-
+ggplot(data = penguins,  # creating plot using the penguins data set
+       mapping = aes(x = species, fill = species)) + #using the species as our x-axis
+  geom_bar() + # making the chart into a bar plot
+labs(x = "Species", #Labeling species as the x-axis
+     y = "Counts") #Labeling Counts as the y-axis
 ```
 
 ## Step 6: Scatterplot
@@ -114,7 +118,12 @@ Use `ggplot2` to create a scatterplot of the relationship between the bill lengt
 
 ```{r}
 #| label: scatterplot
-
+ggplot(data = penguins, #Using the penguins data set
+       mapping = aes(x = bill_length_mm, #mapping bill length as the x-axis
+                     y = bill_depth_mm)) + #mapping bill depth as the y-axis
+  geom_point()+ #creating the chart as a scatterplot
+  labs(x = "Bill Length (mm)", #naming the x-axis
+       y = "Bill Depth (mm)") #naming the y-axis
 ```
 
 ## Step 7: Adding A Categorical Variable
