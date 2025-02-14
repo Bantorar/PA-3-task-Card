@@ -106,7 +106,7 @@ Use `ggplot2` to draw a barchart of different `species` included in the dataset.
 ```{r}
 #| label: barchart
 ggplot(data = penguins,  # creating plot using the penguins data set
-       mapping = aes(x = species, fill = species)) + #using the species as our x-axis
+       mapping = aes(x = species, fill = island)) + #using the species as our x-axis
   geom_bar() + # making the chart into a bar plot
 labs(x = "Species", #Labeling species as the x-axis
      y = "Counts") #Labeling Counts as the y-axis
@@ -165,6 +165,9 @@ ggplot(data = penguins, #Using the penguins data set
 ```
 
 # Canvas Quiz
+
+```{r}
+```
 
 Working together as a team, use the plots you both created to address the
 following questions on Canvas:
