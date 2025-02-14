@@ -8,7 +8,10 @@ execute:
 ---
 
 ```{r}
-
+#| label:setup
+library(tidyverse)
+install.packages("palmerpenguins")
+library(palmerpenguins)
 ```
 
 Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.
@@ -88,7 +91,7 @@ data(penguins)
 
 **What variables are included in these data? What units are the variables measured in? What does each row represent?**
 
-> Insert Answer Here
+> The different Variables are the Island names, Penguin species, bill lengths, bill depths, flippler lengths, body mass, their sex, and the year the data was collected. The variables are mostly strings but for the bill and flipper variables the last two letters show what variables are measured with bills and flippers using milimeters and body mass using grams. Each row represents an individual penguin they found on the island.
 
 
 
